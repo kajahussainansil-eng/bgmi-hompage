@@ -1,155 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BGMI Gamer Homepage</title>
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    body{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:linear-gradient(135deg,#0a0f1f,#111827,#14532d);
-      color:white;
-      overflow:hidden;
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0f1f, #111827, #14532d);
+      color: white;
+      overflow: hidden;
     }
 
-    #greeting{
-      position:fixed;
-      top:20px;
-      left:20px;
-      background:rgba(0,0,0,0.5);
-      border:2px solid #22c55e;
-      padding:12px 18px;
-      border-radius:14px;
-      font-size:1rem;
-      color:white;
-      box-shadow:0 0 15px rgba(34,197,94,0.8);
-      z-index:999;
-      font-weight:bold;
-      backdrop-filter:blur(10px);
+    #greeting {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #22c55e;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 1rem;
+      color: white;
+      box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+      z-index: 999;
+      font-weight: bold;
+      backdrop-filter: blur(10px);
     }
 
-    #fpsCounter{
-      position:fixed;
-      top:20px;
-      right:20px;
-      background:rgba(0,0,0,0.5);
-      border:2px solid #22c55e;
-      padding:10px 16px;
-      border-radius:14px;
-      font-size:1rem;
-      color:#22c55e;
-      box-shadow:0 0 15px rgba(34,197,94,0.8);
-      z-index:999;
-      font-weight:bold;
-      backdrop-filter:blur(10px);
+    #fpsCounter {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #22c55e;
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-size: 1rem;
+      color: #22c55e;
+      box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+      z-index: 999;
+      font-weight: bold;
+      backdrop-filter: blur(10px);
     }
 
-    .container{
-      text-align:center;
-      width:90%;
-      max-width:700px;
-      backdrop-filter:blur(10px);
-      background:rgba(0,0,0,0.45);
-      padding:40px;
-      border-radius:24px;
-      box-shadow:0 0 30px rgba(34,197,94,0.35);
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 700px;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.35);
     }
 
-    .rgb-glow{
-      animation:rgbGlow 6s linear infinite;
+    .rgb-glow {
+      animation: rgbGlow 6s linear infinite;
     }
 
-    @keyframes rgbGlow{
-      0%{
-        box-shadow:0 0 20px #ff0000;
+    @keyframes rgbGlow {
+      0% {
+        box-shadow: 0 0 20px #ff0000;
       }
-      25%{
-        box-shadow:0 0 20px #00ff00;
+
+      25% {
+        box-shadow: 0 0 20px #00ff00;
       }
-      50%{
-        box-shadow:0 0 20px #00ffff;
+
+      50% {
+        box-shadow: 0 0 20px #00ffff;
       }
-      75%{
-        box-shadow:0 0 20px #ff00ff;
+
+      75% {
+        box-shadow: 0 0 20px #ff00ff;
       }
-      100%{
-        box-shadow:0 0 20px #ff0000;
+
+      100% {
+        box-shadow: 0 0 20px #ff0000;
       }
     }
 
-    h1{
-      font-size:3rem;
-      margin-bottom:10px;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
 
-    #time{
-      font-size:4rem;
-      font-weight:bold;
-      margin:20px 0;
+    #time {
+      font-size: 4rem;
+      font-weight: bold;
+      margin: 20px 0;
     }
 
-    #date{
-      font-size:1.2rem;
-      opacity:0.8;
-      margin-bottom:30px;
+    #date {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 30px;
     }
 
-    .search-box{
-      display:flex;
-      justify-content:center;
-      margin-bottom:30px;
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
     }
 
-    .search-box input{
-      width:80%;
-      padding:16px;
-      border:none;
-      border-radius:14px;
-      font-size:1rem;
-      outline:none;
-      background:rgba(20,83,45,0.45);
-      color:white;
+    .search-box input {
+      width: 80%;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      font-size: 1rem;
+      outline: none;
+      background: rgba(20, 83, 45, 0.45);
+      color: white;
     }
 
-    .search-box input::placeholder{
-      color:#cbd5e1;
+    .search-box input::placeholder {
+      color: #cbd5e1;
     }
 
-    .links{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-      gap:16px;
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
     }
 
-    .link-card{
-      padding:18px;
-      border-radius:16px;
-      text-decoration:none;
-      color:white;
-      background:rgba(20,83,45,0.45);
-      transition:0.3s;
+    .link-card {
+      padding: 18px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: white;
+      background: rgba(20, 83, 45, 0.45);
+      transition: 0.3s;
     }
 
-    .link-card:hover{
-      transform:translateY(-5px) scale(1.03);
-      background:rgba(34,197,94,0.35);
+    .link-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(34, 197, 94, 0.35);
     }
 
-    .quote{
-      margin-top:25px;
-      font-style:italic;
-      opacity:0.85;
+    .quote {
+      margin-top: 25px;
+      font-style: italic;
+      opacity: 0.85;
     }
   </style>
 </head>
@@ -173,13 +178,29 @@
     </div>
 
     <div class="links">
-      <a class="link-card" href="https://www.battlegroundsmobileindia.com" target="_blank">BGMI</a>
+      <a class="link-card"
+        href="https://www.battlegroundsmobileindia.com"
+        target="_blank">
+        BGMI
+      </a>
 
-      <a class="link-card" href="https://www.youtube.com/results?search_query=bgmi" target="_blank">BGMI Videos</a>
+      <a class="link-card"
+        href="https://www.youtube.com/results?search_query=bgmi"
+        target="_blank">
+        BGMI Videos
+      </a>
 
-      <a class="link-card" href="https://discord.com" target="_blank">Discord</a>
+      <a class="link-card"
+        href="https://discord.com"
+        target="_blank">
+        Discord
+      </a>
 
-      <a class="link-card" href="https://store.steampowered.com" target="_blank">Steam</a>
+      <a class="link-card"
+        href="https://store.steampowered.com"
+        target="_blank">
+        Steam
+      </a>
     </div>
 
     <div class="quote">
@@ -190,66 +211,85 @@
 
   <script>
 
-    function updateTime(){
-      const now=new Date();
+    function updateTime() {
 
-      const time=now.toLocaleTimeString();
+      const now = new Date();
 
-      const date=now.toLocaleDateString(undefined,{
-        weekday:'long',
-        year:'numeric',
-        month:'long',
-        day:'numeric'
+      const time = now.toLocaleTimeString();
+
+      const date = now.toLocaleDateString(undefined, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
       });
 
-      document.getElementById('time').textContent=time;
-      document.getElementById('date').textContent=date;
+      document.getElementById('time').textContent = time;
+      document.getElementById('date').textContent = date;
     }
 
-    setInterval(updateTime,1000);
+    setInterval(updateTime, 1000);
+
     updateTime();
 
-    function updateGreeting(){
-      const hour=new Date().getHours();
-      let greeting="";
+    function updateGreeting() {
 
-      if(hour>=5 && hour<12){
-        greeting="Hey, Good Morning ☀️";
-      }
-      else if(hour>=12 && hour<17){
-        greeting="Hey, Good Afternoon 🌤️";
-      }
-      else if(hour>=17 && hour<21){
-        greeting="Hey, Good Evening 🌆";
-      }
-      else{
-        greeting="Hey, It's Bed Time 🌙";
+      const hour = new Date().getHours();
+
+      let greeting = "";
+
+      if (hour >= 5 && hour < 12) {
+
+        greeting = "Hey, Good Morning ☀️";
+
+      } else if (hour >= 12 && hour < 17) {
+
+        greeting = "Hey, Good Afternoon 🌤️";
+
+      } else if (hour >= 17 && hour < 21) {
+
+        greeting = "Hey, Good Evening 🌆";
+
+      } else {
+
+        greeting = "Hey, It's Bed Time 🌙";
       }
 
-      document.getElementById("greeting").textContent=greeting;
+      document.getElementById("greeting").textContent = greeting;
     }
 
-    updateGreeting();
+    window.onload = function () {
 
-    let fps=90;
+      updateGreeting();
 
-    setInterval(()=>{
-      fps=85+Math.floor(Math.random()*6);
-      document.getElementById('fpsCounter').textContent=`FPS: ${fps}`;
-    },1000);
+    };
 
-    document.getElementById('search').addEventListener('keypress',function(e){
+    let fps = 90;
 
-      if(e.key==='Enter'){
-        const query=this.value;
+    setInterval(() => {
 
-        window.location.href=
-        `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-      }
+      fps = 85 + Math.floor(Math.random() * 6);
 
-    });
+      document.getElementById('fpsCounter').textContent =
+        `FPS: ${fps}`;
+
+    }, 1000);
+
+    document.getElementById('search')
+      .addEventListener('keypress', function (e) {
+
+        if (e.key === 'Enter') {
+
+          const query = this.value;
+
+          window.location.href =
+            `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        }
+
+      });
 
   </script>
 
 </body>
+
 </html>
