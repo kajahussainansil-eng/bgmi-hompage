@@ -2,495 +2,294 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Hi Deepu 🌸</title>
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif;
-}
-
-body{
-
-  margin:0;
-  padding:0;
-
-  height:100vh;
-
-  overflow:hidden;
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  background:linear-gradient(
-    135deg,
-    #ffdde1,
-    #ee9ca7,
-    #c9d6ff
-  );
-
-  background-size:400% 400%;
-
-  animation:bg 12s ease infinite;
-
-  transition:1s;
-
-  color:white;
-}
-
-@keyframes bg{
-
-  0%{
-    background-position:0% 50%;
-  }
-
-  50%{
-    background-position:100% 50%;
-  }
-
-  100%{
-    background-position:0% 50%;
-  }
-}
-
-.container{
-
-  width:90%;
-
-  max-width:700px;
-
-  padding:35px;
-
-  border-radius:30px;
-
-  background:rgba(255,255,255,0.15);
-
-  backdrop-filter:blur(12px);
-
-  text-align:center;
-
-  box-shadow:0 0 25px pink;
-
-  animation:glow 5s infinite alternate;
-
-  position:relative;
-
-  z-index:10;
-}
-
-@keyframes glow{
-
-  0%{
-    box-shadow:0 0 20px #ff7eb3;
-  }
-
-  100%{
-    box-shadow:0 0 35px #c9a0ff;
-  }
-}
-
-#greeting{
-
-  position:absolute;
-
-  top:20px;
-  left:20px;
-
-  background:rgba(255,255,255,0.15);
-
-  padding:12px 18px;
-
-  border-radius:20px;
-
-  font-weight:bold;
-
-  backdrop-filter:blur(10px);
-
-  z-index:20;
-}
-
-h1{
-
-  font-size:3rem;
-
-  margin-bottom:20px;
-}
-
-#time{
-
-  font-size:4rem;
-
-  font-weight:bold;
-}
-
-#date{
-
-  margin-top:10px;
-
-  opacity:0.9;
-}
-
-.quote{
-
-  margin-top:25px;
-
-  line-height:1.8;
-
-  font-size:1.1rem;
-}
-
-.search{
-
-  margin-top:25px;
-}
-
-.search input{
-
-  width:80%;
-
-  padding:16px;
-
-  border:none;
-
-  border-radius:20px;
-
-  outline:none;
-
-  background:rgba(255,255,255,0.2);
-
-  color:white;
-
-  font-size:1rem;
-}
-
-.search input::placeholder{
-
-  color:white;
-}
-
-.links{
-
-  margin-top:30px;
-
-  display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-  gap:15px;
-}
-
-.links a{
-
-  text-decoration:none;
-
-  color:white;
-
-  padding:16px;
-
-  border-radius:18px;
-
-  background:rgba(255,255,255,0.18);
-
-  transition:0.3s;
-}
-
-.links a:hover{
-
-  transform:scale(1.05);
-
-  background:rgba(255,255,255,0.3);
-}
-
-.heart{
-
-  position:absolute;
-
-  color:#ff4d88;
-
-  animation:float 8s linear infinite;
-
-  pointer-events:none;
-
-  z-index:30;
-}
-
-@keyframes float{
-
-  0%{
-    transform:translateY(100vh);
-    opacity:0;
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  100%{
-    transform:translateY(-120vh);
-    opacity:0;
-  }
-}
-
-.cloud{
-
-  position:absolute;
-
-  opacity:0.35;
-
-  animation:cloudMove linear infinite;
-
-  pointer-events:none;
-
-  z-index:1;
-}
-
-@keyframes cloudMove{
-
-  0%{
-    transform:translateX(-20vw);
-  }
-
-  100%{
-    transform:translateX(120vw);
-  }
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BGMI Gamer Homepage</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0f1f, #111827, #14532d);
+      color: white;
+      overflow: hidden;
+    }
+
+    #greeting {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #22c55e;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 1rem;
+      color: white;
+      box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+      z-index: 999;
+      font-weight: bold;
+      backdrop-filter: blur(10px);
+    }
+
+    #fpsCounter {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid #22c55e;
+      padding: 10px 16px;
+      border-radius: 14px;
+      font-size: 1rem;
+      color: #22c55e;
+      box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
+      z-index: 999;
+      font-weight: bold;
+      backdrop-filter: blur(10px);
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 700px;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.35);
+    }
+
+    .rgb-glow {
+      animation: rgbGlow 6s linear infinite;
+    }
+
+    @keyframes rgbGlow {
+      0% {
+        box-shadow: 0 0 20px #ff0000;
+      }
+
+      25% {
+        box-shadow: 0 0 20px #00ff00;
+      }
+
+      50% {
+        box-shadow: 0 0 20px #00ffff;
+      }
+
+      75% {
+        box-shadow: 0 0 20px #ff00ff;
+      }
+
+      100% {
+        box-shadow: 0 0 20px #ff0000;
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    #time {
+      font-size: 4rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    #date {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .search-box input {
+      width: 80%;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      font-size: 1rem;
+      outline: none;
+      background: rgba(20, 83, 45, 0.45);
+      color: white;
+    }
+
+    .search-box input::placeholder {
+      color: #cbd5e1;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+    }
+
+    .link-card {
+      padding: 18px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: white;
+      background: rgba(20, 83, 45, 0.45);
+      transition: 0.3s;
+    }
+
+    .link-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: rgba(34, 197, 94, 0.35);
+    }
+
+    .quote {
+      margin-top: 25px;
+      font-style: italic;
+      opacity: 0.85;
+    }
+  </style>
 </head>
 
 <body>
 
-<div id="greeting">
+  <div id="greeting">Hey...</div>
 
-Good Morning Deepu ☀️
+  <div id="fpsCounter">FPS: 90</div>
 
-</div>
+  <div class="container rgb-glow">
 
-<div class="container">
+    <h1>BGMI COMMAND CENTER</h1>
 
-<h1>Hi Deepu 🌸</h1>
+    <div id="time">00:00:00</div>
 
-<div id="time">
+    <div id="date">Loading date...</div>
 
-00:00:00
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Search Google..." />
+    </div>
 
-</div>
+    <div class="links">
+      <a class="link-card"
+        href="https://www.battlegroundsmobileindia.com"
+        target="_blank">
+        BGMI
+      </a>
 
-<div id="date">
+      <a class="link-card"
+        href="https://www.youtube.com/results?search_query=bgmi"
+        target="_blank">
+        BGMI Videos
+      </a>
 
-Loading...
+      <a class="link-card"
+        href="https://discord.com"
+        target="_blank">
+        Discord
+      </a>
 
-</div>
+      <a class="link-card"
+        href="https://store.steampowered.com"
+        target="_blank">
+        Steam
+      </a>
+    </div>
 
-<div class="quote">
+    <div class="quote">
+      “Winner Winner Chicken Dinner.”
+    </div>
 
-Hey Deepu, hope today becomes beautiful 💫
+  </div>
 
-<br><br>
+  <script>
 
-Reminder: You're awesome 🌸
+    function updateTime() {
 
-<br><br>
+      const now = new Date();
 
-Drink water & conquer the day 😌
+      const time = now.toLocaleTimeString();
 
-</div>
+      const date = now.toLocaleDateString(undefined, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
 
-<div class="search">
+      document.getElementById('time').textContent = time;
+      document.getElementById('date').textContent = date;
+    }
 
-<input
-type="text"
-id="search"
-placeholder="Search Google..."
->
+    setInterval(updateTime, 1000);
 
-</div>
+    updateTime();
 
-<div class="links">
+    function updateGreeting() {
 
-<a href="https://youtube.com"
-target="_blank">
+      const hour = new Date().getHours();
 
-YouTube 🎬
+      let greeting = "";
 
-</a>
+      if (hour >= 5 && hour < 12) {
 
-<a href="https://spotify.com"
-target="_blank">
+        greeting = "Hey, Good Morning ☀️";
 
-Spotify 🎵
+      } else if (hour >= 12 && hour < 17) {
 
-</a>
+        greeting = "Hey, Good Afternoon 🌤️";
 
-<a href="https://instagram.com"
-target="_blank">
+      } else if (hour >= 17 && hour < 21) {
 
-Instagram 📸
+        greeting = "Hey, Good Evening 🌆";
 
-</a>
+      } else {
 
-<a href="https://pinterest.com"
-target="_blank">
+        greeting = "Hey, It's Bed Time 🌙";
+      }
 
-Pinterest 🌷
+      document.getElementById("greeting").textContent = greeting;
+    }
 
-</a>
+    window.onload = function () {
 
-</div>
+      updateGreeting();
 
-</div>
+    };
 
-<audio autoplay loop>
+    let fps = 90;
 
-<source
-src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=lofi-study-112191.mp3"
-type="audio/mpeg">
+    setInterval(() => {
 
-</audio>
+      fps = 85 + Math.floor(Math.random() * 6);
 
-<script>
+      document.getElementById('fpsCounter').textContent =
+        `FPS: ${fps}`;
 
-function updateTime(){
+    }, 1000);
 
-  const now = new Date();
+    document.getElementById('search')
+      .addEventListener('keypress', function (e) {
 
-  document.getElementById("time").innerHTML =
-  now.toLocaleTimeString();
+        if (e.key === 'Enter') {
 
-  document.getElementById("date").innerHTML =
-  now.toDateString();
-}
+          const query = this.value;
 
-setInterval(updateTime,1000);
+          window.location.href =
+            `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        }
 
-updateTime();
+      });
 
-function updateGreeting(){
-
-  const hour = new Date().getHours();
-
-  let text = "";
-
-  if(hour >= 5 && hour < 12){
-
-    text = "Good Morning Deepu ☀️";
-
-  }else if(hour >= 12 && hour < 17){
-
-    text = "Good Afternoon Deepu 🌤️";
-
-  }else if(hour >= 17 && hour < 21){
-
-    text = "Good Evening Deepu 🌆";
-
-  }else{
-
-    text = "Hey Deepu, it's bedtime 🌙";
-  }
-
-  document.getElementById("greeting").innerHTML = text;
-}
-
-updateGreeting();
-
-function updateTheme(){
-
-  const hour = new Date().getHours();
-
-  if(hour >= 18 || hour < 6){
-
-    document.body.style.background =
-    "linear-gradient(135deg,#0f172a,#1e293b,#312e81)";
-
-  }else{
-
-    document.body.style.background =
-    "linear-gradient(135deg,#ffdde1,#ee9ca7,#c9d6ff)";
-  }
-}
-
-updateTheme();
-
-document.getElementById("search")
-.addEventListener("keypress",function(e){
-
-  if(e.key === "Enter"){
-
-    const q = this.value;
-
-    window.location.href =
-    "https://www.google.com/search?q=" +
-    encodeURIComponent(q);
-  }
-});
-
-function createHeart(){
-
-  const heart = document.createElement("div");
-
-  heart.classList.add("heart");
-
-  heart.innerHTML = "❤";
-
-  heart.style.left =
-  Math.random()*100 + "vw";
-
-  heart.style.fontSize =
-  (15 + Math.random()*20) + "px";
-
-  document.body.appendChild(heart);
-
-  setTimeout(()=>{
-
-    heart.remove();
-
-  },8000);
-}
-
-setInterval(createHeart,500);
-
-function createCloud(){
-
-  const cloud = document.createElement("div");
-
-  cloud.classList.add("cloud");
-
-  cloud.innerHTML = "☁️";
-
-  cloud.style.top =
-  Math.random()*70 + "vh";
-
-  cloud.style.animationDuration =
-  (25 + Math.random()*20) + "s";
-
-  cloud.style.fontSize =
-  (40 + Math.random()*50) + "px";
-
-  document.body.appendChild(cloud);
-
-  setTimeout(()=>{
-
-    cloud.remove();
-
-  },45000);
-}
-
-setInterval(createCloud,4000);
-
-</script>
+  </script>
 
 </body>
+
 </html>
