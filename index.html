@@ -1,295 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BGMI Gamer Homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<title>Deepu's Dream Space</title>
 
-    body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #0a0f1f, #111827, #14532d);
-      color: white;
-      overflow: hidden;
-    }
+<style>
 
-    #greeting {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid #22c55e;
-      padding: 12px 18px;
-      border-radius: 14px;
-      font-size: 1rem;
-      color: white;
-      box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
-      z-index: 999;
-      font-weight: bold;
-      backdrop-filter: blur(10px);
-    }
+body{
+  margin:0;
+  padding:0;
+  height:100vh;
+  overflow:hidden;
+  font-family:Arial,sans-serif;
 
-    #fpsCounter {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid #22c55e;
-      padding: 10px 16px;
-      border-radius: 14px;
-      font-size: 1rem;
-      color: #22c55e;
-      box-shadow: 0 0 15px rgba(34, 197, 94, 0.8);
-      z-index: 999;
-      font-weight: bold;
-      backdrop-filter: blur(10px);
-    }
+  background:linear-gradient(
+    135deg,
+    #ffdde1,
+    #ee9ca7,
+    #c9d6ff
+  );
 
-    .container {
-      text-align: center;
-      width: 90%;
-      max-width: 700px;
-      backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.45);
-      padding: 40px;
-      border-radius: 24px;
-      box-shadow: 0 0 30px rgba(34, 197, 94, 0.35);
-    }
+  background-size:400% 400%;
 
-    .rgb-glow {
-      animation: rgbGlow 6s linear infinite;
-    }
+  animation:bg 12s ease infinite;
 
-    @keyframes rgbGlow {
-      0% {
-        box-shadow: 0 0 20px #ff0000;
-      }
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-      25% {
-        box-shadow: 0 0 20px #00ff00;
-      }
+  color:white;
+}
 
-      50% {
-        box-shadow: 0 0 20px #00ffff;
-      }
+@keyframes bg{
 
-      75% {
-        box-shadow: 0 0 20px #ff00ff;
-      }
+  0%{
+    background-position:0% 50%;
+  }
 
-      100% {
-        box-shadow: 0 0 20px #ff0000;
-      }
-    }
+  50%{
+    background-position:100% 50%;
+  }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+  100%{
+    background-position:0% 50%;
+  }
+}
 
-    #time {
-      font-size: 4rem;
-      font-weight: bold;
-      margin: 20px 0;
-    }
+.container{
 
-    #date {
-      font-size: 1.2rem;
-      opacity: 0.8;
-      margin-bottom: 30px;
-    }
+  width:90%;
+  max-width:700px;
 
-    .search-box {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
+  padding:35px;
 
-    .search-box input {
-      width: 80%;
-      padding: 16px;
-      border: none;
-      border-radius: 14px;
-      font-size: 1rem;
-      outline: none;
-      background: rgba(20, 83, 45, 0.45);
-      color: white;
-    }
+  border-radius:30px;
 
-    .search-box input::placeholder {
-      color: #cbd5e1;
-    }
+  background:rgba(255,255,255,0.15);
 
-    .links {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 16px;
-    }
+  backdrop-filter:blur(12px);
 
-    .link-card {
-      padding: 18px;
-      border-radius: 16px;
-      text-decoration: none;
-      color: white;
-      background: rgba(20, 83, 45, 0.45);
-      transition: 0.3s;
-    }
+  text-align:center;
 
-    .link-card:hover {
-      transform: translateY(-5px) scale(1.03);
-      background: rgba(34, 197, 94, 0.35);
-    }
+  box-shadow:0 0 25px pink;
 
-    .quote {
-      margin-top: 25px;
-      font-style: italic;
-      opacity: 0.85;
-    }
-  </style>
+  animation:glow 5s infinite alternate;
+}
+
+@keyframes glow{
+
+  0%{
+    box-shadow:0 0 20px #ff7eb3;
+  }
+
+  100%{
+    box-shadow:0 0 35px #c9a0ff;
+  }
+}
+
+#greeting{
+
+  position:absolute;
+
+  top:20px;
+  left:20px;
+
+  background:rgba(255,255,255,0.15);
+
+  padding:12px 18px;
+
+  border-radius:20px;
+
+  font-weight:bold;
+}
+
+h1{
+
+  font-size:3rem;
+
+  margin-bottom:20px;
+}
+
+#time{
+
+  font-size:4rem;
+
+  font-weight:bold;
+}
+
+#date{
+
+  margin-top:10px;
+
+  opacity:0.9;
+}
+
+.quote{
+
+  margin-top:25px;
+
+  line-height:1.8;
+
+  font-size:1.1rem;
+}
+
+.search{
+
+  margin-top:25px;
+}
+
+.search input{
+
+  width:80%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:20px;
+
+  outline:none;
+
+  background:rgba(255,255,255,0.2);
+
+  color:white;
+
+  font-size:1rem;
+}
+
+.search input::placeholder{
+
+  color:white;
+}
+
+.links{
+
+  margin-top:30px;
+
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:15px;
+}
+
+.links a{
+
+  text-decoration:none;
+
+  color:white;
+
+  padding:16px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.18);
+
+  transition:0.3s;
+}
+
+.links a:hover{
+
+  transform:scale(1.05);
+
+  background:rgba(255,255,255,0.3);
+}
+
+.heart{
+
+  position:absolute;
+
+  color:#ff4d88;
+
+  animation:float 8s linear infinite;
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-120vh);
+    opacity:0;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-  <div id="greeting">Hey...</div>
+<div id="greeting">Hey Deepu ✨</div>
 
-  <div id="fpsCounter">FPS: 90</div>
+<div class="container">
 
-  <div class="container rgb-glow">
+<h1>Deepu 🌸</h1>
 
-    <h1>BGMI COMMAND CENTER</h1>
+<div id="time">00:00:00</div>
 
-    <div id="time">00:00:00</div>
+<div id="date">Loading...</div>
 
-    <div id="date">Loading date...</div>
+<div class="quote">
 
-    <div class="search-box">
-      <input type="text" id="search" placeholder="Search Google..." />
-    </div>
+Hey Deepu, hope today becomes beautiful 💫
+<br><br>
 
-    <div class="links">
-      <a class="link-card"
-        href="https://www.battlegroundsmobileindia.com"
-        target="_blank">
-        BGMI
-      </a>
+Reminder: You're awesome 🌸
+<br><br>
 
-      <a class="link-card"
-        href="https://www.youtube.com/results?search_query=bgmi"
-        target="_blank">
-        BGMI Videos
-      </a>
+Drink water & conquer the day 😌
 
-      <a class="link-card"
-        href="https://discord.com"
-        target="_blank">
-        Discord
-      </a>
+</div>
 
-      <a class="link-card"
-        href="https://store.steampowered.com"
-        target="_blank">
-        Steam
-      </a>
-    </div>
+<div class="search">
 
-    <div class="quote">
-      “Winner Winner Chicken Dinner.”
-    </div>
+<input
+type="text"
+id="search"
+placeholder="Search Google..."
+>
 
-  </div>
+</div>
 
-  <script>
+<div class="links">
 
-    function updateTime() {
+<a href="https://youtube.com" target="_blank">
+YouTube 🎬
+</a>
 
-      const now = new Date();
+<a href="https://spotify.com" target="_blank">
+Spotify 🎵
+</a>
 
-      const time = now.toLocaleTimeString();
+<a href="https://instagram.com" target="_blank">
+Instagram 📸
+</a>
 
-      const date = now.toLocaleDateString(undefined, {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
+<a href="https://pinterest.com" target="_blank">
+Pinterest 🌷
+</a>
 
-      document.getElementById('time').textContent = time;
-      document.getElementById('date').textContent = date;
-    }
+</div>
 
-    setInterval(updateTime, 1000);
+</div>
 
-    updateTime();
+<script>
 
-    function updateGreeting() {
+function updateTime(){
 
-      const hour = new Date().getHours();
+  const now = new Date();
 
-      let greeting = "";
+  document.getElementById("time").innerHTML =
+  now.toLocaleTimeString();
 
-      if (hour >= 5 && hour < 12) {
+  document.getElementById("date").innerHTML =
+  now.toDateString();
+}
 
-        greeting = "Hey, Good Morning ☀️";
+setInterval(updateTime,1000);
 
-      } else if (hour >= 12 && hour < 17) {
+updateTime();
 
-        greeting = "Hey, Good Afternoon 🌤️";
+function updateGreeting(){
 
-      } else if (hour >= 17 && hour < 21) {
+  const hour = new Date().getHours();
 
-        greeting = "Hey, Good Evening 🌆";
+  let text = "";
 
-      } else {
+  if(hour >= 5 && hour < 12){
 
-        greeting = "Hey, It's Bed Time 🌙";
-      }
+    text = "Good Morning Deepu ☀️";
 
-      document.getElementById("greeting").textContent = greeting;
-    }
+  }else if(hour >= 12 && hour < 17){
 
-    window.onload = function () {
+    text = "Good Afternoon Deepu 🌤️";
 
-      updateGreeting();
+  }else if(hour >= 17 && hour < 21){
 
-    };
+    text = "Good Evening Deepu 🌆";
 
-    let fps = 90;
+  }else{
 
-    setInterval(() => {
+    text = "Hey Deepu, it's bedtime 🌙";
+  }
 
-      fps = 85 + Math.floor(Math.random() * 6);
+  document.getElementById("greeting").innerHTML = text;
+}
 
-      document.getElementById('fpsCounter').textContent =
-        `FPS: ${fps}`;
+updateGreeting();
 
-    }, 1000);
+document.getElementById("search")
+.addEventListener("keypress",function(e){
 
-    document.getElementById('search')
-      .addEventListener('keypress', function (e) {
+  if(e.key === "Enter"){
 
-        if (e.key === 'Enter') {
+    const q = this.value;
 
-          const query = this.value;
+    window.location.href =
+    "https://www.google.com/search?q=" +
+    encodeURIComponent(q);
+  }
+});
 
-          window.location.href =
-            `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-        }
+function createHeart(){
 
-      });
+  const heart = document.createElement("div");
 
-  </script>
+  heart.classList.add("heart");
+
+  heart.innerHTML = "❤";
+
+  heart.style.left =
+  Math.random()*100 + "vw";
+
+  heart.style.fontSize =
+  (15 + Math.random()*20) + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },8000);
+}
+
+setInterval(createHeart,500);
+
+</script>
 
 </body>
-
 </html>
