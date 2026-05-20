@@ -213,6 +213,32 @@ h1{
   background:rgba(255,255,255,0.3);
 }
 
+#musicBtn{
+
+  position:absolute;
+
+  bottom:20px;
+  right:20px;
+
+  border:none;
+
+  padding:12px 18px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,0.2);
+
+  color:white;
+
+  font-weight:bold;
+
+  backdrop-filter:blur(10px);
+
+  cursor:pointer;
+
+  z-index:50;
+}
+
 .heart{
 
   position:absolute;
@@ -297,7 +323,7 @@ Loading...
 
 <div class="quote">
 
-Hey Pretty✨️, hope today becomes beautiful 💫
+Hey Deepu, hope today becomes beautiful 💫
 
 <br><br>
 
@@ -353,13 +379,19 @@ Pinterest 🌷
 
 </div>
 
-<audio autoplay loop>
+<audio id="bgMusic" loop>
 
 <source
 src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=lofi-study-112191.mp3"
 type="audio/mpeg">
 
 </audio>
+
+<button id="musicBtn">
+
+🎵 Play Lo-Fi
+
+</button>
 
 <script>
 
@@ -436,6 +468,22 @@ document.getElementById("search")
     encodeURIComponent(q);
   }
 });
+
+const music =
+document.getElementById("bgMusic");
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+music.volume = 0.3;
+
+musicBtn.onclick = function(){
+
+  music.play();
+
+  musicBtn.innerHTML =
+  "🎧 Lo-Fi Playing";
+};
 
 function createHeart(){
 
