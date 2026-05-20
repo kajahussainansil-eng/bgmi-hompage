@@ -84,6 +84,10 @@ body{
   box-shadow:0 0 25px pink;
 
   animation:glow 5s infinite alternate;
+
+  position:relative;
+
+  z-index:10;
 }
 
 @keyframes glow{
@@ -113,6 +117,8 @@ body{
   font-weight:bold;
 
   backdrop-filter:blur(10px);
+
+  z-index:20;
 }
 
 h1{
@@ -214,6 +220,8 @@ h1{
   color:#ff4d88;
 
   animation:float 8s linear infinite;
+
+  pointer-events:none;
 }
 
 @keyframes float{
@@ -230,6 +238,28 @@ h1{
   100%{
     transform:translateY(-120vh);
     opacity:0;
+  }
+}
+
+.cloud{
+
+  position:absolute;
+
+  opacity:0.35;
+
+  animation:cloudMove linear infinite;
+
+  pointer-events:none;
+}
+
+@keyframes cloudMove{
+
+  0%{
+    transform:translateX(-20vw);
+  }
+
+  100%{
+    transform:translateX(120vw);
   }
 }
 
@@ -427,6 +457,34 @@ function createHeart(){
 }
 
 setInterval(createHeart,500);
+
+function createCloud(){
+
+  const cloud = document.createElement("div");
+
+  cloud.classList.add("cloud");
+
+  cloud.innerHTML = "☁️";
+
+  cloud.style.top =
+  Math.random()*70 + "vh";
+
+  cloud.style.animationDuration =
+  (25 + Math.random()*20) + "s";
+
+  cloud.style.fontSize =
+  (40 + Math.random()*50) + "px";
+
+  document.body.appendChild(cloud);
+
+  setTimeout(()=>{
+
+    cloud.remove();
+
+  },45000);
+}
+
+setInterval(createCloud,4000);
 
 </script>
 
